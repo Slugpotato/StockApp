@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Stock_Decisions" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MFA-ZX-kJo">
+                                <rect key="frame" x="0.0" y="64" width="600" height="528"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="528" id="U4i-Pf-fAt"/>
+                                </constraints>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stockCell" id="KgU-uD-xdU">
+                                        <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KgU-uD-xdU" id="NLW-ec-Baj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="oZe-U2-B1K" kind="modal" id="EBg-fs-NNo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="uft-Is-CrT"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="JHL-oC-aHb"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcK-wf-ATU">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Current Stocks" id="l9h-if-WLQ">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="czq-gd-YCR">
+                                            <connections>
+                                                <segue destination="gvE-3B-NYE" kind="modal" id="IHX-vB-r9l"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="mcK-wf-ATU" secondAttribute="width" id="EKO-ZW-u2C"/>
+                            <constraint firstItem="MFA-ZX-kJo" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="Heh-bH-uov"/>
+                            <constraint firstAttribute="centerX" secondItem="mcK-wf-ATU" secondAttribute="centerX" id="QAG-ny-1xV"/>
+                            <constraint firstAttribute="centerX" secondItem="MFA-ZX-kJo" secondAttribute="centerX" id="VRy-Q2-gd6"/>
+                            <constraint firstAttribute="centerY" secondItem="MFA-ZX-kJo" secondAttribute="centerY" constant="-28" id="WIG-kx-BrH"/>
+                            <constraint firstItem="mcK-wf-ATU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="arK-Np-4OB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="MFA-ZX-kJo" id="No5-P0-7Oz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--New Ticker-->
+        <scene sceneID="EXJ-Ff-eMR">
+            <objects>
+                <viewController id="gvE-3B-NYE" customClass="newTicker" customModule="Stock_Decisions" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JsJ-kH-mI4"/>
+                        <viewControllerLayoutGuide type="bottom" id="PU9-06-M9j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fyl-ng-zDZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qr1-Ik-zDa">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Add New Stock" id="jbz-BI-rFv">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="j3E-lF-hW2">
+                                            <connections>
+                                                <segue destination="RrY-Hx-S6I" kind="unwind" identifier="cancelSegue" unwindAction="cancel:" id="tuJ-Tm-nbt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="jdu-L9-DoF">
+                                            <connections>
+                                                <segue destination="RrY-Hx-S6I" kind="unwind" identifier="doneSegue" unwindAction="done:" id="5MZ-Yp-PKz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Ticker or Company" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EbV-FU-Bau">
+                                <rect key="frame" x="16" y="183" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="353" id="2nd-bp-mdT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2nd-bp-mdT"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="EbV-FU-Bau" secondAttribute="centerX" constant="-0.5" id="1I5-gA-ZMj"/>
+                            <constraint firstItem="EbV-FU-Bau" firstAttribute="leading" secondItem="Fyl-ng-zDZ" secondAttribute="leadingMargin" id="3V6-X6-uaf"/>
+                            <constraint firstItem="qr1-Ik-zDa" firstAttribute="top" secondItem="JsJ-kH-mI4" secondAttribute="bottom" id="eB5-WX-tfr"/>
+                            <constraint firstAttribute="centerY" secondItem="EbV-FU-Bau" secondAttribute="centerY" constant="102" id="hi2-0g-nPC"/>
+                            <constraint firstAttribute="centerX" secondItem="qr1-Ik-zDa" secondAttribute="centerX" id="iBR-WS-JfG"/>
+                            <constraint firstItem="qr1-Ik-zDa" firstAttribute="width" secondItem="Fyl-ng-zDZ" secondAttribute="width" id="kUq-Nn-nqc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newChoice" destination="EbV-FU-Bau" id="5Xn-te-IXz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7x-Me-R5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RrY-Hx-S6I" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="202"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1UC-VN-HLi">
+            <objects>
+                <viewController id="oZe-U2-B1K" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tVG-TA-EzC"/>
+                        <viewControllerLayoutGuide type="bottom" id="0cn-8z-hkl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OYD-q9-emK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y59-iX-xpg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="1rQ-YX-wcD">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LyI-oC-seH">
+                                            <connections>
+                                                <segue destination="vXZ-lx-hvc" kind="modal" id="692-ot-6pz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tgk-H7-b8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="855"/>
+        </scene>
+    </scenes>
+</document>
